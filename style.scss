@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Oswald:400,700&display=swap');
+$font-title: 'Oswald';
+$font-p: 'Montserrat';
+$font-extra-bold: 700;
+a {
+    text-decoration: none;
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+*,
+ ::after,
+ ::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+@mixin menu-icon {
+    list-style: none;
+    a {
+        color: rgba(255, 255, 255, 0.95);
+    }
+}
+
+body {
+    min-height: 200vh;
+    background: rgb(227, 72, 60);
+    background: linear-gradient(167deg, rgba(227, 72, 60, 1) 0%, rgba(21, 19, 25, 1) 100%);
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+// ------------------------------------------------
+// ---------------- SITE - BG--------------------------
+// ------------------------------------------------
+.site-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    transition: opacity 950ms;
+    &--black {
+        opacity: 1;
+    }
+}
+
+// ------------------------------------------------
+// ---------------- LOGO --------------------------
+// ------------------------------------------------
+.logo {
+    position: fixed;
+    z-index: 100;
+    right: 15px;
+    top: 40px;
+    width: 80px;
+}
+
+// ---------------- LOGO - min 768--------------------------
+@media (min-width: 768px) {
+    .logo {
+        right: 35px;
+        top: 80px;
+        width: 180px;
+    }
+}
+
+// ------------------------------------------------
+// ---------------- MENU --------------------------
+// ------------------------------------------------
+.left-box {
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-height: 100vh;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.vertical-line {
+    flex: 1;
+    position: relative;
+    &::after {
+        content: '';
+        width: 2px;
+        height: 90%;
+        position: absolute;
+        top: 5%;
+        background: white;
+        left: calc(50% - 2px);
+    }
+}
+
+.site-menu {
+    @include menu-icon;
+    font-size: 25px;
+}
+
+.site-menu__item {
+    padding: 10px;
+    margin-bottom: 25px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.social-icons {
+    @include menu-icon;
+    text-align: center;
+    font-size: 18px;
+}
+
+.social-icons__item {
+    padding: 5px 10px;
+}
+
+// ---------------- MENU - min 768--------------------------
+@media (min-width: 768px) {
+    .left-box {
+        padding: 70px 0;
+    }
+    .site-menu {
+        font-size: 35px;
+    }
+    .social-icons {
+        font-size: 25px;
+    }
+}
+
+// ---------------- MENU - min 1024--------------------------
+@media (min-width: 1024px) {
+    .left-box {
+        margin-left: 30px;
+    }
+}
+
+// ------------------------------------------------
+// ---------------- HERRO --------------------------
+// ------------------------------------------------
+.herro {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px 0 50px;
+}
+
+.herro__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background: url('img/bg-xs.jpg') no-repeat center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.herro__box {
+    position: relative;
+    max-width: 600px;
+}
+
+.herro__title {
+    mix-blend-mode: overlay;
+    font-family: $font-title;
+    font-weight: $font-extra-bold;
+    font-size: 70px;
+    color: rgb(255, 255, 255);
+    line-height: 70px;
+    &--black {
+        mix-blend-mode: difference;
+    }
+}
+
+.herro__content {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.herro__link {
+    margin-top: 25px;
+    a {
+        position: relative;
+        font-family: $font-p;
+        font-weight: $font-extra-bold;
+        font-size: 20px;
+        padding: 8px 24px;
+        border: 2px solid #da0080;
+        border-radius: 3px;
+        color: white;
+        box-shadow: inset 0 0 5px 0px rgba(255, 255, 255, 0.6), 0 0 6px 0px rgba(255, 255, 255, 0.6);
+    }
+}
+
+.herro__description {
+    color: white;
+}
+
+.herro__sub-title {
+    font-family: $font-p;
+    font-weight: $font-extra-bold;
+    margin-bottom: 12px;
+}
+
+.herro__text {
+    font-family: $font-p;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.699);
+}
+
+.herro__nav {
+    position: absolute;
+    display: flex;
+    top: -30px;
+}
+
+.herro__arrow {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 30px;
+    border-radius: 50%;
+    margin: 0 10px;
+    svg {
+        fill: rgba(255, 255, 255, 0.658);
+    }
+}
+
+// ---------------- HERRO - min 768--------------------------
+@media (min-width: 768px) {
+    .herro__bg {
+        background: url('img/bg-l.jpg') no-repeat center;
+        background-size: cover;
+    }
+    .herro__title {
+        font-size: 150px;
+        line-height: 150px;
+    }
+}
+
+// ---------------- HERRO - min 1024--------------------------
+@media (min-width: 1024px) {
+    .herro__bg {
+        background: url('img/bg-xl.jpg') no-repeat center;
+        background-size: cover;
+    }
+    .herro__box {
+        max-width: 750px;
+    }
+    .herro__title {
+        font-size: 180px;
+        line-height: 180px;
+    }
+    .herro__content {
+        display: grid;
+        grid-template-columns: 60% 40%;
+    }
+    .herro__link {
+        a {
+            font-family: $font-p;
+            font-weight: $font-extra-bold;
+            font-size: 35px;
+            padding: 10px 45px;
+            border: 3px solid #da0080;
+            border-radius: 5px;
+            box-shadow: inset 0 0 10px 0px rgba(255, 255, 255, 0.4), 0 0 10px 0px rgba(255, 255, 255, 0.4);
+        }
+    }
+    .herro__sub-title {
+        font-size: 20px;
+    }
+    .herro__text {
+        font-family: $font-p;
+        font-size: 19px;
+        color: rgba(255, 255, 255, 0.699);
+    }
+    .herro__nav {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        top: 50%;
+    }
+    .herro__arrow {
+        width: 40px;
+        position: absolute;
+    }
+    .herro__prev {
+        left: -95px;
+    }
+    .herro__next {
+        right: -95px;
+    }
+}
+
+// ---------------- HERRO - min 1600--------------------------
+@media (min-width: 1800px) {
+    .herro__title {
+        font-size: 350px;
+        line-height: 350px;
+    }
+    .herro__box {
+        max-width: none;
+    }
+}
