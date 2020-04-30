@@ -190,6 +190,15 @@ body {
 // ------------------------------------------------
 // ---------------- HERRO --------------------------
 // ------------------------------------------------
+@keyframes herro-bg-anime {
+    form {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .herro {
     position: relative;
     min-height: 100vh;
@@ -209,6 +218,9 @@ body {
     background: url('img/bg-xs.jpg') no-repeat center;
     background-size: cover;
     z-index: -1;
+    opacity: 0;
+    animation-delay: 1500ms;
+    animation: herro-bg-anime 2800ms forwards;
 }
 
 .herro__box {
