@@ -463,4 +463,8 @@ body {
     max-width: none;
   }
 }
+
+.test {
+  background-color: red;
+}
 /*# sourceMappingURL=style.css.map */
